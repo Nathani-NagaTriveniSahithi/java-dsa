@@ -1,3 +1,4 @@
+package BinarySearch;
 class Solution {
     public int searchInsert(int[] nums, int target) {
         int first = 0;
