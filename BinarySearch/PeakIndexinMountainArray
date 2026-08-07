@@ -1,0 +1,17 @@
+class Solution {
+    public int peakIndexInMountainArray(int[] arr) {
+        int start = 0;
+        int end = arr.length - 1;
+        while(start <= end){
+            int mid = start + (end - start) / 2;
+            if(start == end)/*this is the stop condition.when start and end come to same element it will be the max element of array*/
+                return start;
+            else if(arr[mid] > arr[mid + 1])/*if this condition is true then max element while lie on left side of the mid and again mid may be also max. so we are changing end to mid not mid - 1*/
+                end = mid;
+            else /*this is the condition when arr[mid] < arr[mid + 1] then max element lie on right side of mid.here mid will not be a answer because it is smaller than the mid + 1 element.so start is updated to mid + 1*/
+                start = mid + 1;
+        }
+        return 0;
+        
+    }
+}
